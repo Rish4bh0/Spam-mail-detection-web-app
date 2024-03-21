@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './App'
 import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 import { BrowserRouter } from 'react-router-dom'
 
 
 const styles = {
-  global:(props) => ({
+  global:(props: Record<string, any>) => ({
     body:{
       color:mode('gray.800', 'whiteAlpha.900')(props),
       bg:mode('gray.100', '#101010')(props),
@@ -30,7 +30,9 @@ const colors = {
 
 const theme = extendTheme({ config, styles, colors});
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
  
   <React.StrictMode>
     <BrowserRouter>

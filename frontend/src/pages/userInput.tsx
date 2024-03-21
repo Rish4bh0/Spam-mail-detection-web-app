@@ -19,13 +19,13 @@ import {
 import { Textarea } from "@chakra-ui/react";
 import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 
-const userInput = () => {
-  const [text, setText] = useState("");
-  const [predictions, setPredictions] = useState(null);
-  const [loading, setLoading] = useState(false);
+const UserInput: React.FC = () => {
+  const [text, setText] = useState<string>("");
+  const [predictions, setPredictions] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleInputChange = (e) => {
-    const inputValue = e.target.value;
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const inputValue: string = e.target.value;
     setText(inputValue);
   };
 
@@ -152,4 +152,4 @@ const userInput = () => {
   );
 };
 
-export default userInput;
+export default UserInput;

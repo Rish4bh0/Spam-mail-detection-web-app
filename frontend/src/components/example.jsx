@@ -27,7 +27,7 @@ import React, { useState } from 'react';
 
   function Example() {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [placement, setPlacement] = useState('right')
+    const [placement, setPlacement] = useState('top')
   
     return (
       <>
@@ -37,7 +37,7 @@ import React, { useState } from 'react';
             <Radio value='bottom'>Bottom</Radio>
           </Stack>
         </RadioGroup>
-        <Button  onClick={onOpen} w={"full"} my={8}>
+        <Button  onClick={onOpen} w={"full"} my={8}  color={"white"} bg={useColorModeValue("gray.dark", "gray.dark")}>
           Click to get test data that you can copy for prediction.
         </Button>
         <Drawer placement={placement} onClose={onClose} isOpen={isOpen} >

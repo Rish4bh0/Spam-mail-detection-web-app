@@ -7,6 +7,7 @@ const port = 3001;
 
 app.use(express.json());
 app.use(cors());
+app.options('*', cors());
 
 app.post('/classify', (req, res) => {
     const text = req.body.text;
@@ -17,7 +18,7 @@ app.post('/classify', (req, res) => {
     };
 
     // Define the FastAPI endpoint URL
-    const url = 'http://0.0.0.0:8000/predict/';
+    const url = 'https://spam-mail-detection-web-app.onrender.com/predict/';
 
     // Send POST request to the FastAPI endpoint
     axios.post(url, data)

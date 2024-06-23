@@ -32,7 +32,7 @@ const UserInput: React.FC = () => {
   const handleClassify = () => {
     setLoading(true);
     axios
-      .post("http://localhost:3001/classify", { text })
+      .post("https://spam-mail-detection-web-app.vercel.app/classify", { text })
       .then((response) => {
         setPredictions(response.data);
       })

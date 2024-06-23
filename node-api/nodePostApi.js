@@ -17,7 +17,7 @@ app.post('/classify', (req, res) => {
     };
 
     // Define the FastAPI endpoint URL
-    const url = 'http://localhost:8000/predict/';
+    const url = 'http://0.0.0.0:8000/predict/';
 
     // Send POST request to the FastAPI endpoint
     axios.post(url, data)
